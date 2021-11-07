@@ -1,16 +1,10 @@
 // ===== SHOW MENU ===== //
 const navMenu = document.getElementById('nav-menu'),
-		closeNav = document.getElementById('nav-close'),
 		toggleNav = document.getElementById('nav-toggle');
 
 // Show Menu
 toggleNav.addEventListener('click', ()=>{
 	navMenu.classList.toggle('show-menu')
-});
-
-// Hide Menu
-closeNav.addEventListener('click', ()=>{
-	navMenu.classList.remove('show-menu')
 });
 // ===== end show menu ===== //
 
@@ -181,12 +175,7 @@ timerBox.forEach((n, i) => {
 	n.dataset.aosDelay = i * 100;
 });
 
-// 7. prokes -> .prokes__box
-const prokesBox = document.querySelectorAll('.prokes__box');
-prokesBox.forEach((n, i) => {
-	n.dataset.aos = 'flip-left';
-	n.dataset.aosDelay = i * 100;
-});
+// 7. prokes -> .prokes__content
 
 // 8. message -> .message__container
 

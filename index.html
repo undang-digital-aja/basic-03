@@ -23,42 +23,40 @@
 	<header class="l-header" id="header">
 		<nav class="nav bd-container">
 			<div class="nav__menu" id="nav-menu">
-				<div class="nav__close" id="nav-close">
-					<i class='bx bx-x'></i>
-				</div>
 				<ul class="nav__list">
 					<li class="nav__item">
 						<a href="#home" class="nav__link active-link">
 							<i class='bx bx-home nav__icon'></i>
-							<span>Home</span>
+							<span class="nav__name">Home</span>
 						</a>
 					</li>
 					<li class="nav__item">
 						<a href="#couple" class="nav__link">
 							<i class='bx bxs-heart nav__icon'></i>
-							<span>Mempelai</span>
+							<span class="nav__name">Couple</span>
 						</a>
 					</li>
 					<li class="nav__item">
 						<a href="#event" class="nav__link">
 							<i class='bx bx-calendar-heart nav__icon'></i>
-							<span>Acara</span>
+							<span class="nav__name">Event</span>
 						</a>
 					</li>
 					<li class="nav__item">
 						<a href="#message" class="nav__link">
 							<i class='bx bx-envelope nav__icon'></i>
-							<span>Pesan</span>
+							<span class="nav__name">Wish</span>
 						</a>
 					</li>
 				</ul>
 			</div>
 
 			<div class="nav__toggle" id="nav-toggle">
-				<i class='bx bx-menu menu__icon'></i>
+				<i class='bx bx-grid-alt menu__icon'></i>
 			</div>
 		</nav>
 	</header>
+	<!-- ===== end header ===== -->
 	<!-- ===== end header ===== -->
 
 	<!-- ===== MAIN ===== -->
@@ -156,7 +154,7 @@
 						<span class="event__address">Jl. Pangeran Diponegoro No.8, Medan.</span>
 
 						<!-- Map Button -->
-						<a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.010375137561!2d98.67025851426268!3d3.585091951318914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x303131cdde6364c5%3A0x3f93784602afec1d!2sAdimulia%20Hotel%20Medan!5e0!3m2!1sid!2sid!4v1621423444770!5m2!1sid!2sid" data-fancybox data-type="iframe" data-preload="false" data-width="640" data-height="480">
+						<a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.010375137561!2d98.67025851426268!3d3.585091951318914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x303131cdde6364c5%3A0x3f93784602afec1d!2sAdimulia%20Hotel%20Medan!5e0!3m2!1sid!2sid!4v1621423444770!5m2!1sid!2sid" data-fancybox data-type="iframe" data-preload="false" data-width="100%" data-height="480">
 							<div class="button__with-icon map__button">
 								<i class='bx bx-map-alt button__icon'></i>
 								<span>Get Direction</span>
@@ -188,7 +186,7 @@
 						<span class="event__address">Jl. Pangeran Diponegoro No.8, Medan.</span>
 
 						<!-- Map Button -->
-						<a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.010375137561!2d98.67025851426268!3d3.585091951318914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x303131cdde6364c5%3A0x3f93784602afec1d!2sAdimulia%20Hotel%20Medan!5e0!3m2!1sid!2sid!4v1621423444770!5m2!1sid!2sid" data-fancybox data-type="iframe" data-preload="false" data-width="640" data-height="480">
+						<a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.010375137561!2d98.67025851426268!3d3.585091951318914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x303131cdde6364c5%3A0x3f93784602afec1d!2sAdimulia%20Hotel%20Medan!5e0!3m2!1sid!2sid!4v1621423444770!5m2!1sid!2sid" data-fancybox data-type="iframe" data-preload="false" data-width="100%" data-height="480">
 							<div class="button__with-icon map__button">
 								<i class='bx bx-map-alt button__icon'></i>
 								<span>Get Direction</span>
@@ -227,39 +225,35 @@
 		<!-- ===== end countdown timer =====  -->
 
 		<!-- ===== PROKES ===== -->
-		<div class="prokes section bd-container">
-			<h2 class="section-title">Covid-19</h2>
-			<span class="section-subtitle"> It’s important to us that everyone stays safe, please read carefully our Wedding Day Covid-19 Guidance before attending the event:</span>
-			
-			<div class="prokes__container bd-grid">
-				<div class="prokes__box">
-					<div class="prokes__img-box">
-						<img src="assets/img/keep-distance.png" alt="" class="prokes__img">
+		<section class="prokes section">
+			<div class="prokes__content bd-container" data-aos="fade-down">
+				<h2 class="prokes__title">Covid-19</h2>
+				<span class="prokes__subtitle">It’s important to us that everyone stays safe, please read carefully our Wedding Day Covid-19 Guidance before attending the event:</span>
+
+				<div class="prokes__container bd-grid">
+					<div class="prokes__box">
+						<div class="prokes__img">
+							<img src="assets/img/masker.png" alt="">
+						</div>
+						<span class="prokes__description">All participants must carry and wear a face mask during the wedding event</span>
 					</div>
-					<span class="prokes__description">Observe and keep a distance of 2 meter from other</span>
-				</div>
-				<div class="prokes__box">
-					<div class="prokes__img-box">
-						<img src="assets/img/mask.png" alt="" class="prokes__img">
+					<div class="prokes__box">
+						<div class="prokes__img">
+							<img src="assets/img/jarak.png" alt="">
+						</div>
+						<span class="prokes__description">Observe and keep a distance of 2 meter from other</span>
 					</div>
-					<span class="prokes__description">All participants must carry and wear a face mask during the wedding event</span>
-				</div>
-				<div class="prokes__box">
-					<div class="prokes__img-box">
-						<img src="assets/img/wash-your-hands.png" alt="" class="prokes__img">
+					<div class="prokes__box">
+						<div class="prokes__img">
+							<img src="assets/img/suhu.png" alt="">
+						</div>
+						<span class="prokes__description">Check body temperature</span>
 					</div>
-					<span class="prokes__description">Wash your hand</span>
-				</div>
-				<div class="prokes__box">
-					<div class="prokes__img-box">
-						<img src="assets/img/thermometer.png" alt="" class="prokes__img">
-					</div>
-					<span class="prokes__description">Check body temperature</span>
 				</div>
 			</div>
-		</div>
+		</section>
 		<!-- ===== end prokes ===== -->
-
+		
 		<!-- ===== MESSAGE ===== -->
 		<section class="message section bd-container" id="message">
 			<h2 class="section-title">Send Your Wish!</h2>
