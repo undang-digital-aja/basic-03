@@ -164,26 +164,33 @@ img{
 /* ===== end social media ===== */
 
 /* ===== BUTTONS ===== */
-.button__with-icon{
-	display: -webkit-inline-box;
-	display: -ms-inline-flexbox;
-	display: inline-flex;
+.button{
+	background-color: var(--red-dark);
+	padding: .75rem 1.5rem;
+	border-radius: .25rem;
+	cursor: pointer;
+	max-width: max-content;
+	width: 100%;
+}
+.button__flex{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
 	-webkit-box-pack: center;
 		-ms-flex-pack: center;
 			justify-content: center;
 	-webkit-box-align: center;
 		-ms-flex-align: center;
 			align-items: center;
-	background-color: var(--red-dark);
 	color: var(--white-color);
-	font-weight: var(--semi-bold-font);
-	padding: 0.5rem 1.5rem;
-	border-radius: .5rem;
-	cursor: pointer;
 }
 .button__icon{
 	font-size: 1.5rem;
 	margin-right: var(--mb-1);
+}
+.button__center{
+	margin-left: auto;
+	margin-right: auto;
 }
 /* ===== end buttons ===== */
 
@@ -448,7 +455,7 @@ img{
 .event__address{
 	margin-bottom: var(--mb-4);
 }
-.event .button__with-icon{
+.map__button{
 	background-color: var(--white-color);
 	color: var(--text-color);
 }
@@ -823,6 +830,17 @@ footer .social__media-link{
 		width: 80%;
 	}
 	/* ===== end pop up ===== */
+
+	/* ===== MESSAGE ===== */
+	.message__container{
+		width: 500px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.message__form{
+		padding: 2rem 1.5rem;
+	}
+	/* ===== end message ===== */
 }
 
 @media screen and (min-width: 768px){
@@ -866,14 +884,6 @@ footer .social__media-link{
 		width: 160px;
 	}
 	/* ===== end prokes ===== */
-
-	/* ===== MESSAGE ===== */
-	.message__container{
-		width: 650px;
-		margin-left: auto;
-		margin-right: auto;
-	}
-	/* ===== end message ===== */
 }
 
 @media screen and (min-width: 1024px){
