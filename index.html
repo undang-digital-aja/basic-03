@@ -4,8 +4,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<!-- ===== MAIN CSS ===== -->
-	<link rel="stylesheet" href="assets/css/style.css">
+	<!-- ===== FAVICON ===== -->
+	<link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
 
 	<!-- ===== BOX ICONS ===== -->
 	<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
@@ -16,12 +16,928 @@
 	<!-- ===== AOS ANIMATIONS ===== -->
 	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
 
+	<!-- ===== MAIN CSS ===== -->
+	<style>
+		/* ===== GOOGLE FONTS ===== */
+		@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+		/* ===== FONT FACE ===== */
+		@font-face {
+		   font-family: 'ants_valley_-_personal_useRg';
+		   src: url('assets/fonts/antsvalleypersonaluse-z8drl-webfont.woff2') format('woff2'),
+				url('assets/fonts/antsvalleypersonaluse-z8drl-webfont.woff') format('woff');
+		   font-weight: normal;
+		   font-style: normal;
+		}
+
+		@font-face {
+		   font-family: 'barlistaregular';
+		   src: url('assets/fonts/barlista-zvqxb-webfont.woff2') format('woff2'),
+				url('assets/fonts/barlista-zvqxb-webfont.woff') format('woff');
+		   font-weight: normal;
+		   font-style: normal;
+		}
+		/* ===== end font face ===== */
+
+		/* ===== VARIABLES CSS ===== */
+		:root{
+			/* ===== Colors ===== */
+			--red-dark-color: #701c1f;
+			--red-darker-color: #3D0000;
+			--white-color: #FFF;
+			--text-color: #141414;
+			--body-color: #EDEDED;
+
+			/* ===== Font & Typography ===== */
+			--text-font: 'Poppins', sans-serif;
+			--first-font: 'ants_valley_-_personal_useRg';
+			--second-font: 'barlistaregular';
+			--biggest-font-size: 2.50rem;
+			--h1-font-size: 1.5rem;
+			--h2-font-size: 1.25rem;
+			--h3-font-size: 1rem;
+			--h4-font-size: 1.1rem;
+			--normal-font-size: .938rem;
+			--small-font-size: .725rem;
+
+			/* ===== Font Weight ===== */
+			--regular-font: 400;
+			--medium-font: 500;
+			--semi-bold-font: 600;
+
+			/* ===== z-index ===== */
+			--z-toggle: 100;
+			--z-menu: 200;
+			--z-popup: 300;
+		}
+		/* ===== end variables css ===== */
+
+		/* Responsive Font & Typography */
+		@media screen and (min-width: 768px){
+			:root{
+				--biggest-font-size: 4rem;
+				--h1-font-size: 2.25rem;
+				--h2-font-size: 1.5rem;
+				--h3-font-size: 1.25rem;
+				--h4-font-size: 1.15rem;
+				--normal-font-size: 1rem;
+				--small-font-size: .825rem;
+			}
+		}
+		/* end responsive font & typography */
+
+		/* ===== BASE ===== */
+		*,
+		::before,
+		::after{
+			box-sizing: border-box;
+		}
+		html{
+			scroll-behavior: smooth;
+		}
+		body{
+			margin: 0;
+			font-family: var(--text-font);
+			font-size: var(--normal-font-size);
+			background-color: var(--body-color);
+			color: var(--text-color);
+			line-height: 1.6;
+			overflow: hidden; /* POP-UP */
+		}
+		h1,h2,h3,p,ul{
+			margin: 0;
+		}
+		ul{
+			padding: 0;
+			list-style: none;
+		}
+		a{
+			text-decoration: none;
+		}
+		img{
+			max-width: 100%;
+			height: auto;
+		}
+		.l-main{
+			overflow: hidden !important;
+		}
+		/* ===== end base ===== */
+
+		/* ===== SCROLL BAR ===== */
+		::-webkit-scrollbar{
+			width: .6rem;
+			background: #E8E8E8;
+		}
+		::-webkit-scrollbar-thumb{
+			background: #686D76;
+			border-radius: .5rem;
+		}
+		/* ===== end scroll bar ===== */
+
+		/* ===== LAYOUT ===== */
+		.container{
+			max-width: 1024px;
+			width: calc(100% - 2rem);
+			margin-left: 1rem;
+			margin-right: 1rem;
+		}
+		.grid{
+			display: -ms-grid;
+			display: grid;
+			grid-gap: 1.5rem;
+		}
+		/* ===== end layout ===== */
+
+		/* ===== CSS CLASS ===== */
+		.section{
+			padding: 4rem 0 3rem;
+		}
+		.section__title,
+		.prokes__title,
+		.rsvp__title{
+			font-family: var(--first-font);
+			font-size: var(--h1-font-size);
+			text-align: center;
+		}
+		.section__subtitle,
+		.prokes__subtitle{
+			display: block;
+			text-align: center;
+			margin-bottom: 2rem;
+		}
+		/* ===== end css class ===== */
+
+		/* ===== SOCIAL MEDIA ===== */
+		.social__media-link{
+			background-color: var(--red-dark-color);
+			color: var(--white-color);
+			display: -webkit-inline-box;
+			display: -ms-inline-flexbox;
+			display: inline-flex;
+			padding: 0.5rem;
+			font-size: 1.5rem;
+			border-radius: 50%;
+		}
+		/* ===== end social media ===== */
+
+		/* ===== BUTTONS ===== */
+		.button{
+			background-color: var(--red-dark-color);
+			padding: .75rem 1.5rem;
+			border-radius: .25rem;
+			cursor: pointer;
+			max-width: max-content;
+			width: 100%;
+		}
+		.button--flex{
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-pack: center;
+				-ms-flex-pack: center;
+					justify-content: center;
+			-webkit-box-align: center;
+				-ms-flex-align: center;
+					align-items: center;
+			color: var(--white-color);
+		}
+		.button__icon{
+			font-size: 1.5rem;
+			margin-right: .5rem;
+		}
+		.button--center{
+			margin-left: auto;
+			margin-right: auto;
+		}
+		/* ===== end buttons ===== */
+
+		/* ===== NAV ===== */
+		.nav__toggle{
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			background-color: var(--red-darker-color);
+			color: var(--white-color);
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-pack: center;
+				-ms-flex-pack: center;
+					justify-content: center;
+			-webkit-box-align: center;
+				-ms-flex-align: center;
+					align-items: center;
+			cursor: pointer;
+			position: fixed;
+			left: 1rem;
+			bottom: 1.2rem;
+			z-index: var(--z-toggle);
+		}
+		.menu__icon{
+			font-size: 1.5rem;
+		}
+		.nav__menu{
+			background-color: var(--white-color);
+			padding: 1.5rem 1rem;
+			position: fixed;
+			left: 0;
+			bottom: -100%;
+			width: 100%;
+			border-radius: 1.25rem 1.25rem 0 0;
+			z-index: var(--z-menu);
+			display: -ms-grid;
+			display: grid;
+			-ms-grid-row-align: center;
+				align-items: center;
+			-webkit-transition: .4s;
+			overflow-x: hidden;
+			transition: .4s;
+		}
+		.nav__list,
+		.nav__link{
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+		}
+		.nav__list{
+			-ms-flex-pack: distribute;
+				justify-content: space-around;
+		}
+		.nav__link{
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+				-ms-flex-direction: column;
+					flex-direction: column;
+			-webkit-box-align: center;
+				-ms-flex-align: center;
+						-ms-grid-row-align: center;
+					align-items: center;
+			color: var(--text-color);
+			font-weight: var(--semi-bold-font);
+		}
+		.nav__icon{
+			width: 30px;
+			margin-bottom: .3rem;
+		}
+		.nav__name{
+			font-size: var(--small-font-size);
+		}
+		.nav__close{
+			position: absolute;
+			right: 1rem;
+			bottom: .5rem;
+			font-size: 1.5rem;
+			color: var(--red-dark-color);
+			cursor: pointer;
+		}
+
+		/* Show Menu */
+		.show-menu{
+			bottom: 0;
+		}
+
+		/* Active Link */
+		.active-link{
+			position: relative;
+			color: var(--red-dark-color);
+			-webkit-transition: .3s;
+			transition: .3s;
+		}
+		.active-link::before{
+			content: '';
+			position: absolute;
+			bottom: -.3rem;
+			width: 4px;
+			height: 4px;
+			border-radius: 50%;
+			background-color: var(--red-dark-color);
+			display: none;
+		}
+		/* ===== end nav ===== */
+
+		/* ===== HOME ===== */
+		.home{
+			width: 100%;
+			height: 100vh;
+		}
+		.home__container{
+			height: inherit;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-pack: center;
+				-ms-flex-pack: center;
+					justify-content: center;
+			-webkit-box-align: center;
+				-ms-flex-align: center;
+					align-items: center;
+		}
+		.home__content{
+			text-align: center;
+		}
+		.home__subtitle{
+			font-weight: var(--regular-font);
+			margin-bottom: 1rem;
+		}
+		.home__title{
+			font-size: var(--biggest-font-size);
+			font-family: var(--first-font);
+			margin-bottom: 1rem;
+		}
+		.home__description{
+			background-color: rgba(255,255,255,.5);
+			padding: 1rem 2rem;
+			border-radius: .5rem;
+			width: 100%;
+		}
+		.home__description span{
+			display: block;
+			font-weight: var(--semi-bold-font);
+			font-size: var(--h3-font-size);
+		}
+		.home__place{
+			font-weight: var(--regular-font) !important;
+		}
+		/* ===== end home ===== */
+
+		/* ===== QUOTES ===== */
+		.quotes span{
+			display: block;
+		}
+		.quotes{
+			background-color: var(--red-dark-color);
+			color: var(--white-color);
+			padding: 2.5rem 0;
+		}
+		.quotes__line{
+			width: 300px;
+			height: 2px;
+			background-color: var(--white-color);
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.quotes__content{
+			text-align: center;
+			padding: 2rem 0;
+		}
+		.quotes__title{
+			font-family: var(--first-font);
+			font-size: var(--h1-font-size);
+		}
+		.quotes__bold{
+			font-weight: var(--semi-bold-font);
+			margin-top: 1rem;
+		}
+		/* ===== end quotes ===== */
+
+		/* ===== COUPLE ===== */
+		.couple{
+			text-align: center;
+		}
+		.couple span{
+			display: block;
+		}
+		.couple__box{
+			background-color: var(--red-dark-color);
+			color: var(--white-color);
+			border-radius: .5rem;
+			padding: 1.5rem;
+		}
+		.couple__img{
+			background-color: var(--white-color);
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+			overflow: hidden;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.couple__name{
+			font-size: var(--h2-font-size);
+			margin-bottom: .5rem;
+		}
+		.couple__description{
+			margin-bottom: .5rem;
+		}
+		.couple__bold{
+			font-weight: var(--semi-bold-font);
+		}
+		.couple .social__media-link{
+			background-color: var(--white-color);
+			color: var(--red-dark-color);
+		}
+		/* ===== end couple ===== */
+
+		/* ===== EVENT ===== */
+		.event .section-title{
+			margin-bottom: 2rem;
+		}
+		.event span{
+			display: block;
+		}
+		.event{
+			text-align: center;
+		}
+		.event__box{
+			background-color: var(--red-dark-color);
+			color: var(--white-color);
+			border-radius: .5rem;
+			padding: 2rem;
+		}
+		.event__title{
+			font-family: var(--second-font);
+			font-size: var(--h2-font-size);
+		}
+		.event__img{
+			width: 90px;
+			margin-bottom: 1rem;
+			filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="1 0" /><feFuncG type="table" tableValues="1 0" /><feFuncB type="table" tableValues="1 0" /></feComponentTransfer></filter></svg>#filter');
+			-webkit-filter: invert(1) !important;
+					filter: invert(1) !important;
+		}
+		.event__time{
+			margin: 2rem 0;
+		}
+		.event__line{
+			height: 2px;
+			width: 80px;
+			background-color: var(--white-color);
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.event__time-description{
+			padding: 1rem 0;
+		}
+		.event__icon{
+			font-size: 1.8rem;
+		}
+		.event__date{
+			margin-bottom: 2rem;
+		}
+		.event__hotel{
+			font-weight: var(--semi-bold-font);
+		}
+		.event__address{
+			margin-bottom: 2rem;
+		}
+		.map__button{
+			background-color: var(--white-color);
+			color: var(--text-color);
+		}
+		/* ===== end event ===== */
+
+		/* ===== COUNTDOWN TIMER ===== */
+		.timer{
+			margin-top: 1.75rem;
+		}
+		.timer span{
+			display: block;
+		}
+		.timer__container{
+			-ms-grid-columns: (minmax(100px,1fr))[auto-fit];
+				grid-template-columns: repeat(auto-fit, minmax(100px,1fr));
+			place-items: center !important;
+		}
+		.timer__box{
+			width: 100px;
+			height: 100px;
+			border-radius: .5rem;
+			background-color: var(--red-dark-color);
+			color: var(--white-color);
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-pack: center;
+				-ms-flex-pack: center;
+					justify-content: center;
+			-webkit-box-align: center;
+				-ms-flex-align: center;
+					align-items: center;
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+				-ms-flex-direction: column;
+					flex-direction: column;
+		}
+		.timer__number{
+			font-family: var(--first-font);
+			font-size: var(--h1-font-size);
+			font-weight: var(--semi-bold-font);
+		}
+
+		/* Timer Stop */
+		#timer-stop{
+			text-align: center;
+			margin-top: 1.5rem;
+		}
+		/* ===== end countdown timer ===== */
+
+		/* ===== RSVP ===== */
+		.rsvp__container{
+			background-color: var(--white-color);
+			padding: 2rem 1.2rem;
+			border-radius: .5rem;
+		}
+		.rsvp__field:not(:last-child){
+			margin-bottom: 1rem;
+		}
+		.rsvp__input,
+		.rsvp__textarea{
+			display: block;
+			width: 100%;
+			border: 1px solid #D9D9D9;
+			padding: 0.3rem 0.4rem;
+			border-radius: .3rem;
+			outline: none;
+			font-family: var(--text-font);
+			font-size: var(--normal-font-size);
+		}
+		.rsvp__textarea{
+			height: 125px;
+			resize: none;
+		}
+		.rsvp__input:focus,
+		.rsvp__textarea:focus{
+			border: 1px solid var(--red-dark-color);
+		}
+
+		/* Radio Btn */
+		input[type='radio']::after{
+			position: relative;
+			content: '';
+			display: inline-block;
+			width: 18px;
+			height: 18px;
+			top: -1px;
+			left: -1px;
+			border: 2px solid #d8e4e2;
+			background-color: var(--white-color);
+			border-radius: 50%;
+			box-sizing: border-box;
+			cursor: pointer;
+		}
+		input[type='radio']:checked::after{
+			width: 18px;
+			height: 18px;
+			border-radius: 50%;
+			top: -1px;
+			left: -1px;
+			position: relative;
+			background-color: var(--red-dark-color);
+			content: '';
+			display: inline-block;
+			visibility: visible;
+			border: 2px solid #d8e4e2;
+		}
+		.radio__text{
+			margin-left: 1rem;
+		}
+
+		/* RSVP Respon */
+		.rsvp__respon{
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-align: center;
+				-ms-flex-align: center;
+					align-items: center;
+			margin-top: .75rem;
+			display: none;
+		}
+		.rsvp__respon-icon{
+			font-size: 1.3rem;
+			margin-right: .2rem;
+			color: var(--red-dark-color);
+		}
+		.rsvp__button{
+			font-family: var(--text-font);
+			font-size: var(--normal-font-size);
+			outline: none;
+			border: none;
+			margin-top: 1.75rem;
+		}
+
+		/* Show RSVP Modal */
+		.rsvp-respon{
+			display: -webkit-box !important;
+			display: -ms-flexbox !important;
+			display: flex !important;
+		}
+		/* ===== end rsvp ===== */
+
+		/* ===== PROKES ===== */
+		.prokes{
+			margin-top: 2rem;
+		}
+		.prokes__content{
+			border-radius: .5rem;
+			padding: 2rem 1rem;
+			background-color: var(--red-dark-color);
+			color: var(--white-color);
+		}
+		.prokes__container{
+			-ms-grid-columns: (minmax(120px,1fr))[auto-fit];
+				grid-template-columns: repeat(auto-fit,minmax(120px,1fr));
+		}
+		.prokes__img{
+			width: 130px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.prokes__description{
+			display: block;
+			text-align: center;
+		}
+		/* ===== end prokes ===== */
+
+		/* ===== FOOTER ===== */
+		footer{
+			background-color: var(--red-dark-color);
+			color: var(--white-color);
+			padding: 4rem 0 2rem;
+			margin-top: 5rem;
+		}
+		.footer__container{
+			text-align: center;
+		}
+		.footer__box span{
+			display: block;
+		}
+		.footer__name{
+			font-family: var(--first-font);
+			font-size: var(--biggest-font-size);
+			margin-bottom: 1rem;
+		}
+		.footer__thanks{
+			font-weight: var(--medium-font);
+			letter-spacing: 2px;
+			margin-bottom: 2rem;
+		}
+		.footer__closing{
+			font-family: var(--first-font);
+			font-size: var(--h2-font-size);
+		}
+		.footer__title,
+		.footer__description{
+			font-size: var(--small-font-size);
+		}
+		.footer__box:first-child{
+			margin-bottom: 3rem;
+		}
+		.footer__description{
+			margin-bottom: 1rem;
+		}
+		footer .social__media-link{
+			background-color: var(--white-color);
+			color: var(--red-dark-color);
+		}
+		/* ===== end footer ===== */
+
+		/* ===== BACKSOUND ===== */
+		.backsound{
+			width: 40px;
+			height: 40px;
+			background-color: var(--red-darker-color);
+			border-radius: 50%;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-pack: center;
+				-ms-flex-pack: center;
+					justify-content: center;
+			-webkit-box-align: center;
+				-ms-flex-align: center;
+					align-items: center;
+			position: fixed;
+			right: 1rem;
+			bottom: 1.5rem;
+		}
+		.backsound__icon{
+			width: 23px;
+			-o-object-fit: cover;
+			   object-fit: cover;
+			filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="1 0" /><feFuncG type="table" tableValues="1 0" /><feFuncB type="table" tableValues="1 0" /></feComponentTransfer></filter></svg>#filter');
+			-webkit-filter: invert(1) !important;
+					filter: invert(1) !important;
+			cursor: pointer;
+		}
+		/* ===== end backsound ===== */
+
+		/* ===== POP UP ===== */
+		.popup{
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+			background-color: rgba(0,0,0,.7);
+			-webkit-backdrop-filter: blur(15px);
+					backdrop-filter: blur(15px);
+			z-index: var(--z-popup);
+		}
+		.popup__container{
+			height: inherit;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-pack: center;
+				-ms-flex-pack: center;
+					justify-content: center;
+			-webkit-box-align: center;
+				-ms-flex-align: center;
+					align-items: center;
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+				-ms-flex-direction: column;
+					flex-direction: column;
+			text-align: center;
+		}
+		.popup__content{
+			background: url(assets/img/home_medium.png) no-repeat center/cover;
+			background-color: var(--body-color);
+			border-radius: .5rem;
+			padding: 2rem 1.5rem;
+			width: 100%;
+		}
+		.popup__subtitle{
+			font-size: var(--h1-font-size);
+			font-weight: var(--regular-font);
+			margin-bottom: 2rem;
+		}
+		.popup__line{
+			height: 2px;
+			width: 50px;
+			background-color: var(--text-color);
+			-webkit-transform: rotate(90deg);
+					transform: rotate(90deg);
+			margin: .5rem auto;
+		}
+		.popup__subtitle2{
+			font-weight: var(--regular-font);
+			margin: 2rem 0 0;
+		}
+		.popup__title{
+			font-size: var(--biggest-font-size);
+			font-family: var(--first-font);
+			margin: 1rem 0 1.5rem;
+		}
+		/* ===== end pop up ===== */
+
+		/* ===== MEDIA QUERIS ===== */
+		@media screen and (max-width: 320px){
+			/* ===== NAV ===== */
+			.nav__name{
+				display: none;
+			}
+			.active-link::before{
+				display: block;
+			}
+			/* ===== end nav ===== */
+
+			/* ===== QUOTES ===== */
+			.quotes__line{
+				width: 90%;
+			}
+			/* ===== end quotes ===== */
+		}
+
+		@media screen and (max-width: 568px){
+			/* ===== HOME ===== */
+			.home{
+				background: url(assets/img/home_portrait.png) no-repeat center/cover;
+			}
+			/* ===== end home ===== */
+		}
+
+		@media screen and (min-width: 568px){
+			/* ===== HOME ===== */
+			.home{
+				background: url(assets/img/home_landscape.png) no-repeat center/cover;
+			}
+			/* ===== end home ===== */
+
+			/* ====== COUPLE ===== */
+			.couple__container{
+				-ms-grid-columns: (1fr)[2];
+					grid-template-columns: repeat(2,1fr);
+			}
+			/* ===== end couple ===== */
+
+			/* ===== PROKES ===== */
+			.prokes__container{
+				-ms-grid-columns: (1fr)[3];
+					grid-template-columns: repeat(3,1fr);
+			}
+			.prokes__subtitle{
+				width: 90%;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			/* ===== end prokes ===== */
+
+			/* ===== POP UP ===== */
+			.popup__content{
+				width: 80%;
+			}
+			/* ===== end pop up ===== */
+		}
+
+		@media screen and (min-width: 768px){
+			/* ===== LAYOUT ===== */
+			.section{
+				padding-top: 5rem;
+			}
+			/* ===== end layout ===== */
+
+			/* ===== NAV ===== */
+			.nav__menu{
+				padding-bottom: 1rem;
+			}
+			.nav__name{
+				font-size: var(--normal-font-size);
+			}
+			.nav__list{
+				width: 700px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			.nav__icon{
+				width: 40px;
+			}
+			.nav__close{
+				right: 1.5rem;
+				bottom: 1rem;
+			}
+			/* ===== end nav ====== */
+
+			/* ===== COUPLE ===== */
+			.couple__container{
+				-webkit-column-gap: 2rem;
+				   -moz-column-gap: 2rem;
+						column-gap: 2rem;
+			}
+			/* ===== end couple ===== */
+
+			/* ====== EVENT ===== */
+			.event__container{
+				-ms-grid-columns: (1fr)[2];
+					grid-template-columns: repeat(2,1fr);
+			}
+			/* ===== end event ===== */
+
+			/* ===== PROKES ===== */
+			.prokes__img{
+				width: 160px;
+			}
+			/* ===== end prokes ===== */
+		}
+
+		@media screen and (min-width: 1024px){
+			/* ===== LAYOUT ===== */
+			.container{
+				margin-left: auto;
+				margin-right: auto;
+			}
+			/* ===== end layout ===== */
+
+			/* ===== HOME ===== */
+			.home{
+				background: url(assets/img/home_landscape.png) no-repeat center/cover;
+			}
+			/* ===== end home ===== */
+
+			/* ===== COUPLE ===== */
+			.couple__container{
+				-webkit-column-gap: 6rem;
+				   -moz-column-gap: 6rem;
+						column-gap: 6rem;
+			}
+			/* ===== end couple ===== */
+
+			/* ===== EVENT ===== */
+			.event__container{
+				-webkit-column-gap: 2rem;
+				   -moz-column-gap: 2rem;
+						column-gap: 2rem;
+			}
+			/* ===== end event ===== */
+
+			/* ===== POP UP ===== */
+			.popup__content{
+				width: 70%;
+			}
+			/* ===== end pop up ===== */
+		}
+		/* ===== end media queris ===== */
+	</style>	
+	<!-- ===== end main css ===== -->
+
 	<title>Wedding Invitation - Shinta & Rama</title>
 </head>
 <body>
 	<!-- ===== HEADER ===== -->
 	<header class="l-header" id="header">
-		<nav class="nav bd-container">
+		<nav class="nav container">
 			<div class="nav__menu" id="nav-menu">
 				<ul class="nav__list">
 					<li class="nav__item">
@@ -43,27 +959,27 @@
 						</a>
 					</li>
 					<li class="nav__item">
-						<a href="#message" class="nav__link">
-							<img src="assets/img/wish.png" alt="" class="nav__icon">
-							<span class="nav__name">Wish</span>
+						<a href="#rsvp" class="nav__link">
+							<img src="assets/img/rsvp.png" alt="" class="nav__icon">
+							<span class="nav__name">RSVP</span>
 						</a>
 					</li>
 				</ul>
+				<i class='bx bx-x nav__close' id="nav-close"></i>
 			</div>
 
 			<div class="nav__toggle" id="nav-toggle">
-				<i class='bx bx-grid-alt menu__icon'></i>
+				<i class='bx bx-menu menu__icon'></i>
 			</div>
 		</nav>
 	</header>
-	<!-- ===== end header ===== -->
 	<!-- ===== end header ===== -->
 
 	<!-- ===== MAIN ===== -->
 	<main class="l-main">
 		<!-- ===== HOME ===== -->
 		<section class="home" id="home">
-			<div class="home__container bd-container">
+			<div class="home__container container">
 				<div class="home__content" data-aos="fade-down">
 					<h2 class="home__subtitle">The Wedding of</h2>
 					<h1 class="home__title">Shinta & Rama</h1>
@@ -78,7 +994,7 @@
 
 		<!-- ===== QUOTES ===== -->
 		<section class="quotes">
-			<div class="quotes__container bd-container" data-aos="fade-down">
+			<div class="quotes__container container" data-aos="fade-down">
 				<div class="quotes__line"></div>
 				<div class="quotes__content">
 					<span class="quotes__title">~Two become one~</span>
@@ -91,11 +1007,11 @@
 		<!-- ===== end quotes ===== -->
 
 		<!-- ===== COUPLE ===== -->
-		<section class="couple section bd-container" id="couple">
-			<h2 class="section-title">Groom and Bride</h2>
-			<span class="section-subtitle">By the grace of God, we request the honour of your presence at the wedding of</span>
+		<section class="couple section container" id="couple">
+			<h2 class="section__title">Groom and Bride</h2>
+			<span class="section__subtitle">By the grace of God, we request the honour of your presence at the wedding of</span>
 
-			<div class="couple__container bd-grid">
+			<div class="couple__container grid">
 				<div class="couple__box" data-aos="fade-right">
 					<div class="couple__img">
 						<img src="assets/img/groom.png" alt="">
@@ -127,9 +1043,9 @@
 		<!-- ===== end couple ===== -->
 
 		<!-- ===== EVENT ===== -->
-		<section class="event section bd-container" id="event">
-			<h2 class="section-title">Love Never Fails.<br>1 Corinthians 13:8</h2>
-			<div class="event__container bd-grid">
+		<section class="event section container" id="event">
+			<h2 class="section__title">Love Never Fails.<br>1 Corinthians 13:8</h2>
+			<div class="event__container grid">
 				<!-- 1 -->
 				<div class="event__box" data-aos="fade-right">
 					<img src="assets/img/event_icon1.png" alt="" class="event__img">
@@ -155,7 +1071,7 @@
 
 						<!-- Map Button -->
 						<a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.010375137561!2d98.67025851426268!3d3.585091951318914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x303131cdde6364c5%3A0x3f93784602afec1d!2sAdimulia%20Hotel%20Medan!5e0!3m2!1sid!2sid!4v1621423444770!5m2!1sid!2sid" data-fancybox data-type="iframe" data-preload="false" data-width="100%" data-height="480">
-							<div class="button button__flex button__center map__button">
+							<div class="button button--flex button--center map__button">
 								<i class='bx bx-map-alt button__icon'></i>
 								<span>Get Direction</span>
 							</div>
@@ -187,7 +1103,7 @@
 
 						<!-- Map Button -->
 						<a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.010375137561!2d98.67025851426268!3d3.585091951318914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x303131cdde6364c5%3A0x3f93784602afec1d!2sAdimulia%20Hotel%20Medan!5e0!3m2!1sid!2sid!4v1621423444770!5m2!1sid!2sid" data-fancybox data-type="iframe" data-preload="false" data-width="100%" data-height="480">
-							<div class="button button__flex button__center map__button">
+							<div class="button button--flex button--center map__button">
 								<i class='bx bx-map-alt button__icon'></i>
 								<span>Get Direction</span>
 							</div>
@@ -199,10 +1115,10 @@
 		<!-- ===== end event ===== -->
 
 		<!-- ===== COUNTDOWN TIMER ===== -->
-		<section class="timer section bd-container">
-			<h2 class="section-title">The Day</h2>
-			<span class="section-subtitle">And now these three remain: Faith, Hope and Love. But the greatest of these is Love.</span>
-			<div class="timer__container bd-grid">
+		<section class="timer container">
+			<h2 class="section__title">The Day</h2>
+			<span class="section__subtitle">And now these three remain: Faith, Hope and Love. But the greatest of these is Love.</span>
+			<div class="timer__container grid">
 				<div class="timer__box">
 					<p class="timer__number" id="days">0</p>
 					<span class="timer__description">Days</span>			
@@ -224,13 +1140,65 @@
 		</section>
 		<!-- ===== end countdown timer =====  -->
 
+		<!-- ===== RSVP ===== -->
+		<section class="rsvp section container" id="rsvp">
+			<div class="rsvp__container" data-aos="fade-down">
+				<h2 class="rsvp__title">RSVP</h2>
+
+				<form class="rsvp__form" name="rsvp-input-data">
+					<!-- Name -->
+					<div class="rsvp__field">
+						<label for="rsvp-name">Name:</label>
+						<input type="text" class="rsvp__input validate" id="rsvp-name" name="Name" required="" value="">
+					</div>
+					<!-- Message -->
+					<div class="rsvp__field">
+						<label for="rsvp-textarea">Message:</label>
+						<textarea class="rsvp__textarea" id="rsvp-textarea" required="" name="Message"></textarea>
+					</div>
+					<!-- Attend -->
+					<div class="rsvp__field">
+						<label>Will you be attending?</label>
+						<div class="radio__box">
+							<input type="radio" value="Yes" checked="checked" class="radio__input" name="Attend"><span class="radio__text">Yes</span>
+						</div>
+						<div class="radio__box">
+							<input type="radio" value="No" class="radio__input" name="Attend"><span class="radio__text">No</span>
+						</div>
+					</div>
+					<!-- Amount -->
+					<div class="rsvp__field">
+						<label>How will you attend?</label>
+						<div class="radio__box">
+							<input type="radio" value="Alone" checked="checked" class="radio__input" name="Amount"><span class="radio__text">Alone</span>
+						</div>
+						<div class="radio__box">
+							<input type="radio" value="With Partner" class="radio__input" name="Amount"><span class="radio__text">With Partner</span>
+						</div>
+					</div>
+
+					<button type="submit" class="button button--flex rsvp__button">
+						<i class='bx bx-envelope button__icon'></i>
+						<span>Send</span>
+					</button>
+				</form>
+
+				<!-- RSVP Modal -->
+				<div class="rsvp__respon">
+					<i class='bx bx-check rsvp__respon-icon'></i>
+					<span>Thank you!</span>
+				</div>
+			</div>
+		</section>
+		<!-- ===== end rsvp ===== -->
+
 		<!-- ===== PROKES ===== -->
-		<section class="prokes section">
-			<div class="prokes__content bd-container" data-aos="fade-down">
+		<section class="prokes">
+			<div class="prokes__content container" data-aos="fade-down">
 				<h2 class="prokes__title">Covid-19</h2>
 				<span class="prokes__subtitle">It’s important to us that everyone stays safe, please read carefully our Wedding Day Covid-19 Guidance before attending the event:</span>
 
-				<div class="prokes__container bd-grid">
+				<div class="prokes__container grid">
 					<div class="prokes__box">
 						<div class="prokes__img">
 							<img src="assets/img/masker.png" alt="">
@@ -254,42 +1222,13 @@
 		</section>
 		<!-- ===== end prokes ===== -->
 		
-		<!-- ===== MESSAGE ===== -->
-		<section class="message section bd-container" id="message">
-			<h2 class="section-title">Send Your Wish!</h2>
-
-			<div class="message__container" data-aos="fade-down" data-aos-delay="100">
-				<form class="message__form">
-					<div class="message__field">
-						<label for="message-name">Name:</label>
-						<input type="text" class="message__input validate" name="name" required value="" id="message-name">
-						<div class="underline"></div>
-					</div>
-					<div class="message__field textarea">
-						<label for="message-textarea">Message:</label>
-						<textarea class="message__textarea" required id="message-textarea"></textarea>
-						<div class="underline"></div>
-					</div>
-					<div class="message__field" style="display: none;">
-						<input type="url" class="message__input validate" name="url" required value="" id="message-url">
-					</div>
-
-					<a href="javascript:void" class="button button__flex message__button" id="send-message" type="submit" title="Send">
-						<i class='bx bxl-whatsapp button__icon'></i>
-						<span>Kirim</span>
-					</a>
-
-					<div id="message-respon"></div>
-				</form>
-			</div>
-		</section>
-		<!-- ===== end message ===== -->
+		
 	</main>
 	<!-- ===== end main ===== -->
 
 	<!-- ===== FOOTER ===== -->
 	<footer>
-		<div class="footer__container bd-container">
+		<div class="footer__container container">
 			<div class="footer__box">
 				<span class="footer__name">Shinta & Rama</span>
 				<span class="footer__thanks">TERIMA KASIH</span>
@@ -301,8 +1240,6 @@
 				<div class="social__media">
 					<!-- IG -->
 					<a href="https://www.instagram.com/undangdigitalaja/" target="_blank" class="social__media-link"><i class='bx bxl-instagram' ></i></a>
-					<!-- WA -->
-					<a href="https://api.whatsapp.com/send?phone=6287896889778&text=Halo+Admin%2C+mau+tanya+Undangan+Digital+dong!" target="_blank" class="social__media-link"><i class='bx bxl-whatsapp'></i></a>
 				</div>
 			</div>
 		</div>
@@ -318,21 +1255,15 @@
 	</div>
 	<!-- ===== end backsound ===== -->
 
-	<!-- ===== SCROLL TOP ===== -->
-	<a href="#" class="scrolltop" id="scroll-top">
-		<i class='bx bx-chevron-up scrolltop__icon' ></i>
-	</a>
-	<!-- ===== end scroll top ===== -->
-
 	<!-- ===== POP UP ===== -->
 	<div class="popup" id="popup">
-		<div class="popup__container bd-container">
-			<div class="popup__content" data-aos="fade-down">
+		<div class="popup__container container">
+			<div class="popup__content">
 				<h2 class="popup__subtitle">Welcome</h2>
 				<div class="popup__line"></div>
 				<h3 class="popup__subtitle2">You are invited to the wedding of</h3>
 				<h1 class="popup__title">Shinta & Rama</h1>
-				<div class="button button__flex button__center" id="popup-btn">
+				<div class="button button--flex button--center" id="popup-btn">
 					<i class='bx bx-envelope button__icon'></i>
 					<span>Open Invitation</span>
 				</div>
@@ -344,13 +1275,158 @@
 	<!-- ===== FANCYAPPS JS ===== -->
 	<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
 
-	<!-- ===== JQUERY for MESSAGE BOX via WhatsApp ===== -->
-	<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
-
 	<!-- ===== AOS ANIMATIONS ===== -->
 	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
 	<!-- ===== MAIN JS ===== -->
-	<script src="assets/js/script.js"></script>
+	<script>
+		// ===== SHOW MENU ===== //
+		const navMenu = document.getElementById('nav-menu'),
+				toggleNav = document.getElementById('nav-toggle'),
+				closeNav = document.getElementById('nav-close');
+
+		// Show Menu
+		toggleNav.addEventListener('click', ()=>{
+			navMenu.classList.toggle('show-menu')
+		});
+
+		// Hide Menu
+		closeNav.addEventListener('click', ()=>{
+			navMenu.classList.remove('show-menu')
+		});
+		// ===== end show menu ===== //
+
+		// ===== REMOVE MOBILE MENU ===== //
+		const navLink = document.querySelectorAll('.nav__link');
+
+		function linkAction(){
+			navMenu.classList.remove('show-menu')
+		}
+		navLink.forEach(n => n.addEventListener('click',linkAction));
+		// ===== end remove mobile menu ===== //
+
+		// ===== SCROLL SECTIONS ACTIVE LINK ===== //
+		const sections = document.querySelectorAll('section[id]');
+
+		function scrollActive(){
+			const scrollY = window.pageYOffset
+
+			sections.forEach(current =>{
+				const sectionHeight = current.offsetHeight
+				const sectionTop = current.offsetTop - 50;
+				sectionId = current.getAttribute('id')
+
+				if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
+					document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active-link')
+				}else{
+					document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active-link')
+				}
+			})
+		}
+		window.addEventListener('scroll', scrollActive);
+		// ===== end scroll sections active menu ===== //
+
+		// ===== COUNTDOWN TIMER ===== //
+		const countdownDate = new Date("December 25, 2022 08:30:00").getTime();
+
+		const timerFunction = setInterval(() => {
+			const currentDate = new Date().getTime();
+			const finalTime = countdownDate - currentDate;
+
+			if(finalTime > 0){
+				const days = Math.floor(finalTime / (1000*60*60*24));
+				const hours = Math.floor((finalTime % (1000*60*60*24)) / (1000*60*60));
+				const minutes = Math.floor((finalTime % (1000*60*60)) / (1000*60));
+				const seconds = Math.floor((finalTime % (1000*60)) / (1000));
+
+				document.getElementById('days').innerHTML = days;
+				document.getElementById('hours').innerHTML = hours;
+				document.getElementById('minutes').innerHTML = minutes;
+				document.getElementById('seconds').innerHTML = seconds;
+			}else{
+				clearInterval(timerFunction);
+				document.getElementById("timer-stop").innerHTML = "The Countdown is Over!";
+			}
+		}, 1000);
+		// ===== end countdown timer ===== //
+
+		// ===== BACKSOUND ===== //
+		const backsound = document.getElementById('song');
+		const backsoundIcon = document.getElementById('backsound-icon');
+		const popupBtn = document.getElementById('popup-btn');
+
+		popupBtn.addEventListener('click', ()=>{
+			backsound.play();
+			backsoundIcon.src = "assets/img/pause.png";
+		})
+
+		backsoundIcon.onclick = ()=>{
+			if(backsound.paused){
+				backsound.play();
+				backsoundIcon.src = "assets/img/pause.png";
+			}else{
+				backsound.pause();
+				backsoundIcon.src = "assets/img/play.png";
+			}
+		}
+		// ===== end backsound ===== //
+
+		// ===== POP-UP ===== //
+		const popup = document.getElementById('popup');
+		// const popupBtn = document.getElementById('popup-btn');
+
+		popupBtn.addEventListener('click', ()=>{
+			document.body.style.overflow = 'auto';
+			popup.style.display = 'none';
+		});
+		// ===== end pop up ===== //
+
+		// ===== AOS ANIMATIONS ===== //
+		// 1. home -> .home__content
+
+		// 2. quotes -> .quotes__container
+
+		// 3. class css -> .section-title
+		const sectionTitle = document.querySelectorAll('.section__title');
+		sectionTitle.forEach((n, i) => {
+			n.dataset.aos = 'fade-down';
+		});
+
+		// 4. class css -> .section-subtitle
+		const sectionSubtitle = document.querySelectorAll('.section__subtitle');
+		sectionSubtitle.forEach((n, i) => {
+			n.dataset.aos = 'fade-down';
+			n.dataset.aosDelay = i * 100;
+		});
+
+		// 5. couple -> .couple__box
+
+		// 6. event -> .event__box
+
+		// 7. countdown timer -> .timer__box
+		const timerBox = document.querySelectorAll('.timer__box');
+		timerBox.forEach((n, i) => {
+			n.dataset.aos = 'flip-left';
+			n.dataset.aosDelay = i * 100;
+		});
+
+		// 8. prokes -> .prokes__content
+
+		// 9. rsvp -> .rsvp__container
+
+		// 10. footer -> .footer__box
+		const footerBox = document.querySelectorAll('.footer__box');
+		footerBox.forEach((n, i) => {
+			n.dataset.aos = 'fade-down';
+			n.dataset.aosDelay = i * 100;
+		});
+
+		AOS.init({
+			duration: 1500,
+			once: true,  
+		});
+		// ===== end aos animations ===== //
+	</script>	
+	<!-- ===== end main JS ===== -->
 </body>
 </html>

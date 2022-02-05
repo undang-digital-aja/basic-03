@@ -1,10 +1,16 @@
 // ===== SHOW MENU ===== //
 const navMenu = document.getElementById('nav-menu'),
-		toggleNav = document.getElementById('nav-toggle');
+		toggleNav = document.getElementById('nav-toggle'),
+		closeNav = document.getElementById('nav-close');
 
 // Show Menu
 toggleNav.addEventListener('click', ()=>{
 	navMenu.classList.toggle('show-menu')
+});
+
+// Hide Menu
+closeNav.addEventListener('click', ()=>{
+	navMenu.classList.remove('show-menu')
 });
 // ===== end show menu ===== //
 
@@ -62,53 +68,15 @@ const timerFunction = setInterval(() => {
 }, 1000);
 // ===== end countdown timer ===== //
 
-// ===== MESSAGE BOX via WhatsApp ===== //
-const messageForm = document.querySelector('.message__form');
-
-$(document).on('click','#send-message', function(){
-	var inputMessage = document.getElementById('message-name');
-
-	// WhatsApp Settings
-	var walink = 'https://web.whatsapp.com/send',
-		phone = '6287896889778',
-		walink2 = '*Wedding Message Box* ',
-		text_yes = 'Terimakasih!',
-		text_no = 'Isi semua form lalu klik Kirim.';
-
-	// Smartphone Support
-	if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-			var walink = 'whatsapp://send';
-		}
-
-	if("" != inputMessage.value){
-		// Call Input Form
-		var input_name = $("#message-name").val(),
-			input_textarea = $("#message-textarea").val(),
-			input_url = $("#message-url").val();
-
-		// Final WhatsApp URL
-		var messageWhatsapp = walink + '?phone=' + phone + '&text=' + walink2 + '%0A%0A' +
-			'*Nama* : ' + input_name + '%0A' +
-			'*Pesan* : ' + input_textarea + '%0A' +
-			'*Link* : ' + input_url + '%0A';
-
-		// WhatsApp Window Open 
-		window.open(messageWhatsapp,'_blank');
-		document.getElementById("message-respon").innerHTML = '<div class="yes"><i class="bx bx-check"></i>'+text_yes+ '</div>';
-
-		// reset form
-		messageForm.reset();
-	}else{
-		document.getElementById("message-respon").innerHTML = '<div class="no"><i class="bx bx-x"></i>'+text_no+'</div>';
-	}
-});
-
-document.getElementById('message-url').value = "https://www.google.com/";
-// ===== end message box via whatsapp ===== //
-
 // ===== BACKSOUND ===== //
 const backsound = document.getElementById('song');
 const backsoundIcon = document.getElementById('backsound-icon');
+const popupBtn = document.getElementById('popup-btn');
+
+popupBtn.addEventListener('click', ()=>{
+	backsound.play();
+	backsoundIcon.src = "assets/img/pause.png";
+})
 
 backsoundIcon.onclick = ()=>{
 	if(backsound.paused){
@@ -121,22 +89,9 @@ backsoundIcon.onclick = ()=>{
 }
 // ===== end backsound ===== //
 
-// ===== SHOW SCROLL TOP ===== //
-function scrollTop(){
-	const scrollTop = document.getElementById('scroll-top');
-
-	if (this.scrollY >= 560) {
-		scrollTop.classList.add('show-scroll')
-	} else{
-		scrollTop.classList.remove('show-scroll')
-	}
-}
-window.addEventListener('scroll', scrollTop);
-// ===== end show scroll top ===== //
-
 // ===== POP-UP ===== //
 const popup = document.getElementById('popup');
-const popupBtn = document.getElementById('popup-btn');
+// const popupBtn = document.getElementById('popup-btn');
 
 popupBtn.addEventListener('click', ()=>{
 	document.body.style.overflow = 'auto';
@@ -145,41 +100,39 @@ popupBtn.addEventListener('click', ()=>{
 // ===== end pop up ===== //
 
 // ===== AOS ANIMATIONS ===== //
-// 1. popup -> .popup__content
+// 1. home -> .home__content
 
-// 2. home -> .home__content
+// 2. quotes -> .quotes__container
 
-// 3. quotes -> .quotes__container
-
-// 4. class css -> .section-title
-const sectionTitle = document.querySelectorAll('.section-title');
+// 3. class css -> .section-title
+const sectionTitle = document.querySelectorAll('.section__title');
 sectionTitle.forEach((n, i) => {
 	n.dataset.aos = 'fade-down';
 });
 
-// 5. class css -> .section-subtitle
-const sectionSubtitle = document.querySelectorAll('.section-subtitle');
+// 4. class css -> .section-subtitle
+const sectionSubtitle = document.querySelectorAll('.section__subtitle');
 sectionSubtitle.forEach((n, i) => {
 	n.dataset.aos = 'fade-down';
 	n.dataset.aosDelay = i * 100;
 });
 
-// 4. couple -> .couple__box
+// 5. couple -> .couple__box
 
-// 5. event -> .event__box
+// 6. event -> .event__box
 
-// 6. countdown timer -> .timer__box
+// 7. countdown timer -> .timer__box
 const timerBox = document.querySelectorAll('.timer__box');
 timerBox.forEach((n, i) => {
 	n.dataset.aos = 'flip-left';
 	n.dataset.aosDelay = i * 100;
 });
 
-// 7. prokes -> .prokes__content
+// 8. prokes -> .prokes__content
 
-// 8. message -> .message__container
+// 9. rsvp -> .rsvp__container
 
-// 9. footer -> .footer__box
+// 10. footer -> .footer__box
 const footerBox = document.querySelectorAll('.footer__box');
 footerBox.forEach((n, i) => {
 	n.dataset.aos = 'fade-down';
